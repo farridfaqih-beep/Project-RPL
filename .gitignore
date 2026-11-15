@@ -5,7 +5,6 @@
 
 # File unggahan pelanggan
 /storage/uploads/payments/*
-!/storage/uploads/payments/demo_transfer.png
 !/storage/uploads/payments/.gitkeep
 
 /storage/uploads/gallery/*
