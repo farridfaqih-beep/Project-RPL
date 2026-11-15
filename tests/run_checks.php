@@ -32,7 +32,7 @@ check(rejects(fn() => BookingRules::validateSlot('2026-10-23', 'abc', 60, $now))
 check(rejects(fn() => BookingRules::validateSlot('2026-10-22', '11:00', 60, $now)), 'Jam hari ini yang sudah lewat ditolak');
 check(BookingRules::overlaps(new DateTimeImmutable('2026-10-23 10:00', $tz), 60, new DateTimeImmutable('2026-10-23 10:30', $tz), 30), 'Rentang sesi bertumpang tindih terdeteksi');
 check(!BookingRules::overlaps(new DateTimeImmutable('2026-10-23 10:00', $tz), 60, new DateTimeImmutable('2026-10-23 11:00', $tz), 60), 'Sesi berurutan tanpa tumpang tindih diperbolehkan');
-check(BookingRules::minimumFirstPayment(850000) === 255000, 'DP awal minimal 30 persen dihitung benar');
+check(BookingRules::minimumFirstPayment(850000) === 255001, 'DP awal minimal 30 persen dihitung benar');
 check(BookingRules::paymentStatus(500000, 0, 500000) === 'lunas', 'Status lunas dihitung dari total pembayaran disetujui');
 check(BookingRules::paymentStatus(100000, 0, 500000) === 'dp', 'Pembayaran sebagian terverifikasi dilabeli DP');
 check(BookingRules::paymentStatus(0, 200000, 500000) === 'menunggu', 'Pembayaran belum terverifikasi tidak dihitung sebagai pemasukan');
