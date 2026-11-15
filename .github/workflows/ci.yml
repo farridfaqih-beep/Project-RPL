@@ -1,0 +1,46 @@
+
+name: PHP CI - Foto Studio
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'fitur/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: read
+
+jobs:
+  php-check:
+    name: Pemeriksaan PHP dan pengujian
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ambil source code repository
+        uses: actions/checkout@v7
+
+      - name: Siapkan PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: fileinfo, pdo_mysql
+          coverage: none
+
+      - name: Periksa instalasi PHP dan ekstensi
+        run: |
+          php -v
+          php -m
+          php -r "exit(extension_loaded('fileinfo') && extension_loaded('pdo_mysql') ? 0 : 1);"
+
+      - name: Periksa sintaks seluruh file PHP
+        run: |
+          find app public config tests -type f -name '*.php' -print0 | xargs -0 -r -n1 php -l
+
+      - name: Jalankan pengujian project
+        run: php tests/run_checks.php
