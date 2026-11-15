@@ -1,0 +1,1 @@
+<section class="container app-error"><div class="empty-symbol">⌕</div><span class="section-kicker">404 · Tidak ditemukan</span><h1 style="font:500 2.5rem Georgia,serif">Halaman tidak tersedia</h1><p class="muted">Informasi yang diminta tidak ditemukan atau Anda tidak dapat mengaksesnya.</p><a class="btn btn-copper" href="<?= e(url('home')) ?>">Kembali ke beranda</a></section>

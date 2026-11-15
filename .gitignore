@@ -1,0 +1,19 @@
+# Konfigurasi rahasia
+.env
+.env.*
+!.env.example
+
+# File unggahan pelanggan
+/storage/uploads/payments/*
+!/storage/uploads/payments/demo_transfer.png
+!/storage/uploads/payments/.gitkeep
+
+/storage/uploads/gallery/*
+!/storage/uploads/gallery/.gitkeep
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+
+# Log
+*.log

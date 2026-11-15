@@ -1,0 +1,1 @@
+<section class="container app-error"><div class="empty-symbol">⊘</div><span class="section-kicker">403 · Forbidden</span><h1 style="font:500 2.5rem Georgia,serif">Akses dibatasi</h1><p class="muted">Akun Anda tidak memiliki izin untuk membuka halaman ini.</p><a class="btn btn-copper" href="<?= e(url('home')) ?>">Kembali ke beranda</a></section>
