@@ -1,6 +1,3 @@
-
-## 10. Continuous Integration (GitHub Actions)
-
 Project ini menggunakan GitHub Actions untuk menjalankan pemeriksaan kode dan pengujian otomatis.
 
 ### Pemicu workflow
